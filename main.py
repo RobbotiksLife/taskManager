@@ -89,23 +89,26 @@ if __name__ == "__main__":
     tasksFilePath: str = "tasks.pickle"
 
     while True:
-        print("\nTask Manager Menu:")
-        print("1. Create Task")
-        print("2. Display Tasks")
-        print("3. Complete Task")
-        print("4. Display Tasks Sorted by deadline")
-        print("5. Exit")
-        choice = input("Enter your choice: ")
+        try:
+            print("\nTask Manager Menu:")
+            print("1. Create Task")
+            print("2. Display Tasks")
+            print("3. Complete Task")
+            print("4. Display Tasks Sorted by deadline")
+            print("5. Exit")
+            choice = input("Enter your choice: ")
 
-        if choice == "1":
-            create_task()
-        elif choice == "2":
-            display_tasks(tasks)
-        elif choice == "3":
-            mark_task_completed_or_update_deadline()
-        elif choice == "4":
-            display_tasks(sort_tasks_by_deadline(tasks))
-        elif choice == "5":
-            break
-        else:
-            print("Invalid choice. Please try again.")
+            if choice == "1":
+                create_task()
+            elif choice == "2":
+                display_tasks(tasks)
+            elif choice == "3":
+                mark_task_completed_or_update_deadline()
+            elif choice == "4":
+                display_tasks(sort_tasks_by_deadline(tasks))
+            elif choice == "5":
+                break
+            else:
+                print("Invalid choice. Please try again.")
+        except Exception as e:
+            print(f'Error: {e}')
